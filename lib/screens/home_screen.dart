@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => {},
         ),
         title: Text("Back", style: TextStyle(fontWeight: FontWeight.w300)),
         actions: [
@@ -62,13 +62,15 @@ class HomeScreen extends StatelessWidget {
                 Stack(children: [
                   Positioned(
                     bottom: 70.0,
-                    child: Sparkline(
-                      data: data,
-                      lineWidth: 3.0,
-                      lineGradient: new LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [Colors.green, Colors.orange],
+                    child: ClipRRect(
+                      child: Sparkline(
+                        data: data,
+                        lineWidth: 3.0,
+                        lineGradient: new LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.green, Colors.orange],
+                        ),
                       ),
                     ),
                   ),
@@ -93,12 +95,22 @@ class HomeScreen extends StatelessWidget {
                               child: Row(
                                 children: [
                                   ClipRRect(
-                                      borderRadius: BorderRadius.circular(15.0),
-                                      child: Container(height: 30.0, width: 30.0, color: Colors.orange)),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    child: Container(
+                                        height: 30.0,
+                                        width: 30.0,
+                                        color: Colors.orange,
+                                        child: Icon(Icons.arrow_forward_ios, color: Colors.white, size: 20.0)),
+                                  ),
                                   SizedBox(width: 10.0),
                                   ClipRRect(
                                       borderRadius: BorderRadius.circular(15.0),
-                                      child: Container(height: 30.0, width: 30.0, color: Colors.grey)),
+                                      child: Container(
+                                          height: 30.0,
+                                          width: 30.0,
+                                          color: Colors.grey,
+                                          child: Icon(Icons.radio_button_checked_outlined,
+                                              color: Colors.white, size: 20.0))),
                                 ],
                               ),
                             ),
