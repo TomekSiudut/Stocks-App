@@ -21,17 +21,28 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Text("AAPL", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35.0))
-                ],
-              ),
-              Row(
-                children: <Widget>[],
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("AAPL", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35.0)),
+                    Row(
+                      children: <Widget>[
+                        Text("\$${190.76}",
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35.0)),
+                        Icon(Icons.arrow_upward, color: Colors.green),
+                        Text("3.48%", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold))
+                      ],
+                    )
+                  ],
+                ),
+                Text("Apple Technologies Inc.", style: TextStyle(color: Colors.grey))
+              ],
+            ),
           )
         ],
       ),
