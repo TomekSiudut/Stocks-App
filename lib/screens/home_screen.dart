@@ -4,10 +4,12 @@ import 'package:Stocker/widgets/news_tile.dart';
 import 'package:Stocker/widgets/small_button.dart';
 import 'package:Stocker/widgets/stock_button.dart';
 import "package:flutter/material.dart";
+import 'package:flutter_sparkline/flutter_sparkline.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0, -0.5, 0.0, 0.90];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -57,27 +59,60 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Divider(color: Colors.grey),
                 Categories(),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Summary",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                Stack(children: [
+                  Positioned(
+                    bottom: 70.0,
+                    child: Sparkline(
+                      data: data,
+                      lineWidth: 3.0,
+                      lineGradient: new LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [Colors.green, Colors.orange],
                       ),
-                      LineChart(price: "200"),
-                      LineChart(price: "190"),
-                      LineChart(price: "180"),
-                      LineChart(price: "170")
-                    ],
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Summary",
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        LineChart(price: "200"),
+                        LineChart(price: "190"),
+                        LineChart(price: "180"),
+                        Stack(children: [
+                          LineChart(price: "170"),
+                          Positioned(
+                            bottom: 0.10,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Row(
+                                children: [
+                                  ClipRRect(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      child: Container(height: 30.0, width: 30.0, color: Colors.orange)),
+                                  SizedBox(width: 10.0),
+                                  ClipRRect(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      child: Container(height: 30.0, width: 30.0, color: Colors.grey)),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ])
+                      ],
+                    ),
+                  ),
+                ]),
                 SizedBox(height: 10.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Stock Data",
+                    Text("Stock data",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 25.0,
