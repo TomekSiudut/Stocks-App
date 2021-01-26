@@ -14,7 +14,11 @@ class StockButton extends StatelessWidget {
           decoration: BoxDecoration(color: color, borderRadius: new BorderRadius.circular(5.0)),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 55.0, vertical: 12.0),
-            child: Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0)),
+            child: Column(
+              children: [
+                Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0)),
+              ],
+            ),
           )),
     );
   }

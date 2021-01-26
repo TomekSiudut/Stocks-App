@@ -1,4 +1,6 @@
 import 'package:Stocker/widgets/categories.dart';
+import 'package:Stocker/widgets/line_of_chart.dart';
+import 'package:Stocker/widgets/small_button.dart';
 import 'package:Stocker/widgets/stock_button.dart';
 import "package:flutter/material.dart";
 
@@ -54,9 +56,38 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Divider(color: Colors.grey),
                 Categories(),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Summary",
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      LineChart(price: "200"),
+                      LineChart(price: "190"),
+                      LineChart(price: "180"),
+                      LineChart(price: "170")
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Stock Data",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25.0,
+                        )),
+                    SmallButton()
+                  ],
+                ),
+                SizedBox(height: 10.0)
               ],
             ),
-          )
+          ),
         ],
       ),
       backgroundColor: Colors.black,
