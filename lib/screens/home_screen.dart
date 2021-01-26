@@ -1,5 +1,6 @@
 import 'package:Stocker/widgets/categories.dart';
 import 'package:Stocker/widgets/line_of_chart.dart';
+import 'package:Stocker/widgets/news_tile.dart';
 import 'package:Stocker/widgets/small_button.dart';
 import 'package:Stocker/widgets/stock_button.dart';
 import "package:flutter/material.dart";
@@ -84,10 +85,25 @@ class HomeScreen extends StatelessWidget {
                     SmallButton()
                   ],
                 ),
-                SizedBox(height: 10.0)
+                SizedBox(height: 5.0),
               ],
             ),
           ),
+          NewsTile(
+              title: "White House Tried to Lock Down Ukraine Call Records",
+              imageUrl:
+                  "https://media.npr.org/assets/img/2014/10/01/456476824_vert-b8e29abdf99ddb391a5a39e8c510f99cbac24d68-s800-c85.jpg",
+              date: "Sept 28, 2019"),
+          NewsTile(
+              title: "Egypt is on Edge as Security Thightnens over Protests",
+              imageUrl:
+                  "https://media.pri.org/s3fs-public/styles/story_main/public/egypt-tahrir-square-revolution-mubarak-live-blog-2012-1-25.jpg?itok=ewt2gNiT",
+              date: "Sept 27, 2019"),
+          NewsTile(
+              title: "Biotech IPOs Are Risky Business...",
+              imageUrl:
+                  "https://www.allenovery.com/global/-/media/allenovery/1_images/sectors/life_sciences/biotechnology/ao_hero_image_m01_sub_sector_life_sciences_biotech1.jpg?la=en-GB&h=421&w=674&mw=674&hash=0439AD17DED9ADEB8E82A82962C155B3",
+              date: "Sept 26, 2019")
         ],
       ),
       backgroundColor: Colors.black,
