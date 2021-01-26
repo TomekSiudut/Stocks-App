@@ -1,3 +1,4 @@
+import 'package:Stocker/widgets/categories.dart';
 import 'package:Stocker/widgets/stock_button.dart';
 import "package:flutter/material.dart";
 
@@ -50,7 +51,9 @@ class HomeScreen extends StatelessWidget {
                     StockButton(title: "Buy", color: Colors.green),
                     StockButton(title: "Sell", color: Colors.red)
                   ],
-                )
+                ),
+                Divider(color: Colors.grey),
+                Categories(),
               ],
             ),
           )
