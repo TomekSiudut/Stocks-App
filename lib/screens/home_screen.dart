@@ -1,3 +1,4 @@
+import 'package:Stocker/widgets/stock_button.dart';
 import "package:flutter/material.dart";
 
 class HomeScreen extends StatelessWidget {
@@ -34,13 +35,22 @@ class HomeScreen extends StatelessWidget {
                       children: <Widget>[
                         Text("\$${190.76}",
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35.0)),
+                        SizedBox(width: 5.0),
                         Icon(Icons.arrow_upward, color: Colors.green),
                         Text("3.48%", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold))
                       ],
                     )
                   ],
                 ),
-                Text("Apple Technologies Inc.", style: TextStyle(color: Colors.grey))
+                Text("Apple Technologies Inc.", style: TextStyle(color: Colors.grey)),
+                SizedBox(height: 10.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    StockButton(title: "Buy", color: Colors.green),
+                    StockButton(title: "Sell", color: Colors.red)
+                  ],
+                )
               ],
             ),
           )
