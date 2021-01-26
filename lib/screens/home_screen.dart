@@ -142,7 +142,7 @@ class HomeScreen extends StatelessWidget {
                   "https://media.npr.org/assets/img/2014/10/01/456476824_vert-b8e29abdf99ddb391a5a39e8c510f99cbac24d68-s800-c85.jpg",
               date: "Sept 28, 2019"),
           NewsTile(
-              title: "Egypt is on Edge as Security Thightnens over Protests",
+              title: "Egypt is on Edge as Security Tightnes over Protests",
               imageUrl:
                   "https://media.pri.org/s3fs-public/styles/story_main/public/egypt-tahrir-square-revolution-mubarak-live-blog-2012-1-25.jpg?itok=ewt2gNiT",
               date: "Sept 27, 2019"),
